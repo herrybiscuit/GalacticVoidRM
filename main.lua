@@ -1,5 +1,5 @@
 function love.load()
-    --print("asdasd")
+    print("asdasd")
 end
 
 function love.update(dt)
