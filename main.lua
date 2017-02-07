@@ -7,14 +7,16 @@ lovetoys.initialize({
 require("src.events.KeyPressed")
 require("src.events.MousePressed")
 
-require("src.systems.events.MainKeySystem")
+--fs = require("libs.MiniFS.minifs")
+
+keysys = require("src.systems.events.MainKeySystem")
 
 function love.load()
   engine = Engine()
   world = love.physics.newWorld(0, 0, true)
   eventmanager = EventManager()
 
-  eventmanager:addListener("KeyPressed", MainKeySystem, MainKeySystem.fireEvent)
+  eventmanager:addListener("KeyPressed", keysys, keysys.fireEvent)
 end
 
 function love.update(dt)
