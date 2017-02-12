@@ -4,6 +4,8 @@ lovetoys.initialize({
   debug=true
 })
 
+--Gamestate = require("libs.HUMP.gamestate")
+
 require("src.events.KeyPressed")
 require("src.events.MousePressed")
 
@@ -12,6 +14,9 @@ require("src.events.MousePressed")
 keysys = require("src.systems.events.MainKeySystem")
 
 function love.load()
+  Gamestate.registerEvents()
+  Gamestate.switch(menu)
+
   engine = Engine()
   world = love.physics.newWorld(0, 0, true)
   eventmanager = EventManager()
