@@ -1,7 +1,10 @@
 local menu = {}
 
 function menu:init()
-  Gv.EventManager:addListener("KeyPressed", keysys, keysys.fireEvent)
+  --Gv.EventManager:addListener("KeyPressed", keysys, keysys.fireEvent)
+
+  local StartGameEntity = Entity()
+  Gv.Engine:addEntity(StartGameEntity)
 end
 
 function menu:update(dt)

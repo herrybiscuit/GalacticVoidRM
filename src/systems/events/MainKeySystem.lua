@@ -1,8 +1,10 @@
 local MainKeySystem = class("MainKeySystem", System)
 
 function MainKeySystem:fireEvent(event)
-  if event.key == "s" then
-    print("yeh")
+  if event.key == "w" then
+    -- up list
+  elseif event.key == "s" then
+    -- down list
   end
 end
 
