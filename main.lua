@@ -21,6 +21,9 @@ require("src.components.MainMenuButton")
 -- Event systems
 MainMenuEventSys = require("src.systems.events.MainMenuEventSystem")
 
+-- Drawing systems
+MainMenuRenderSys = require("src.systems.render.MainMenuRenderSystem")
+
 -- initialize gamestates
 Gv.GameState = require("libs.HUMP.gamestate")
 Gv.MainMenu = require("src.gamestate.mainmenu")
