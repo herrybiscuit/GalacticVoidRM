@@ -6,18 +6,24 @@ lovetoys.initialize({
 
 Gv = {}
 
+-- Initialize main elements
 Gv.Engine = Engine()
 Gv.EventManager = EventManager()
-Gv.GameState = require("libs.HUMP.gamestate")
-Gv.MainMenu = require("src.gamestate.mainmenu")
 
+-- Events
 require("src.events.KeyPressed")
 require("src.events.MousePressed")
 require("src.events.MouseMoved")
 
-keysys = require("src.systems.events.MainKeySystem")
+-- Components
+require("src.components.MainMenuButton")
 
---fs = require("libs.MiniFS.minifs")
+-- Event systems
+MainMenuEventSys = require("src.systems.events.MainMenuEventSystem")
+
+-- initialize gamestates
+Gv.GameState = require("libs.HUMP.gamestate")
+Gv.MainMenu = require("src.gamestate.mainmenu")
 
 function love.load()
   Gv.GameState.registerEvents()

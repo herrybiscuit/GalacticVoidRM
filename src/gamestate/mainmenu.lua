@@ -1,9 +1,12 @@
 local menu = {}
 
+local MainMenuButton = Component.load({"MainMenuButton"})
+
 function menu:init()
-  --Gv.EventManager:addListener("KeyPressed", keysys, keysys.fireEvent)
+  Gv.EventManager:addListener("KeyPressed", MainMenuEventSys, MainMenuEventSys.fireKeyPressed)
 
   local StartGameEntity = Entity()
+  StartGameEntity:add(MainMenuButton("StartGame", 50, 50, love.graphics.newFont(24), nil, nil))
   Gv.Engine:addEntity(StartGameEntity)
 end
 
@@ -13,7 +16,6 @@ end
 
 function menu:draw()
   Gv.Engine:draw()
-  love.graphics.print("Testing", 0, 0)
 end
 
 function menu:keypressed(key, scancode, isrepeat)
