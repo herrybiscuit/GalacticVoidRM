@@ -5,9 +5,19 @@ local MainMenuButton = Component.load({"MainMenuButton"})
 function menu:init()
   Gv.EventManager:addListener("KeyPressed", MainMenuEventSys, MainMenuEventSys.fireKeyPressed)
 
+  Gv.DefaultFont = love.graphics.newFont(50)
+
   local StartGameEntity = Entity()
-  StartGameEntity:add(MainMenuButton("StartGame", 50, 50, love.graphics.newFont(24), nil, nil))
+  StartGameEntity:add(MainMenuButton("StartGame", 50, 60, Gv.DefaultFont, nil, nil))
   Gv.Engine:addEntity(StartGameEntity)
+
+  local OptionsEntity = Entity()
+  OptionsEntity:add(MainMenuButton("Options", 50, 60*2, Gv.DefaultFont, nil, nil))
+  Gv.Engine:addEntity(OptionsEntity)
+
+  local QuitEntity = Entity()
+  QuitEntity:add(MainMenuButton("Quit", 50, 60*3, Gv.DefaultFont, nil, function() print("Quit") end))
+  Gv.Engine:addEntity(QuitEntity)
 
   Gv.Engine:addSystem(MainMenuRenderSys())
 end

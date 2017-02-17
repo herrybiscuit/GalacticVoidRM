@@ -10,6 +10,9 @@ Gv = {}
 Gv.Engine = Engine()
 Gv.EventManager = EventManager()
 
+-- Set version
+Gv.Version = "0.00.1"
+
 -- Events
 require("src.events.KeyPressed")
 require("src.events.MousePressed")
