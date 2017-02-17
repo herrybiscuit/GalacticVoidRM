@@ -9,7 +9,7 @@ function menu:init()
   StartGameEntity:add(MainMenuButton("StartGame", 50, 50, love.graphics.newFont(24), nil, nil))
   Gv.Engine:addEntity(StartGameEntity)
 
-  Gv.Engine:addSystem(MainMenuRenderSys)
+  Gv.Engine:addSystem(MainMenuRenderSys())
 end
 
 function menu:update(dt)

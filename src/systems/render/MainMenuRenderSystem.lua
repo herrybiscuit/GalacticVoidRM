@@ -1,7 +1,7 @@
 local MainMenuRenderSystem = class("MainMenuRenderSystem", System)
 
 function MainMenuRenderSystem:initialize()
-
+   System.initialize(self)
 end
 
 function MainMenuRenderSystem:draw()
