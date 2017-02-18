@@ -6,6 +6,17 @@ lovetoys.initialize({
 
 Gv = {}
 
+-- Setup fonts
+Gv.font = {}
+Gv.font.CommonFontPx = 25
+Gv.font.H1 = love.graphics.newFont(Gv.font.CommonFontPx * 2)
+Gv.font.H2 = love.graphics.newFont(Gv.font.CommonFontPx * 1.5)
+Gv.font.H3 = love.graphics.newFont(Gv.font.CommonFontPx * 1.17)
+Gv.font.H4 = love.graphics.newFont(Gv.font.CommonFontPx * 1.12)
+Gv.font.H5 = love.graphics.newFont(Gv.font.CommonFontPx * 0.83)
+Gv.font.H6 = love.graphics.newFont(Gv.font.CommonFontPx * 0.75)
+Gv.font.p = love.graphics.newFont(Gv.font.CommonFontPx * 1)
+
 -- Initialize main elements
 Gv.Engine = Engine()
 Gv.EventManager = EventManager()
