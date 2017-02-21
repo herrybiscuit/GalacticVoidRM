@@ -7,22 +7,22 @@ lovetoys.initialize({
 Gv = {}
 
 -- Setup fonts
-Gv.font = {}
-Gv.font.CommonFontPx = 25
-Gv.font.H1 = love.graphics.newFont(Gv.font.CommonFontPx * 2)
-Gv.font.H2 = love.graphics.newFont(Gv.font.CommonFontPx * 1.5)
-Gv.font.H3 = love.graphics.newFont(Gv.font.CommonFontPx * 1.17)
-Gv.font.H4 = love.graphics.newFont(Gv.font.CommonFontPx * 1.12)
-Gv.font.H5 = love.graphics.newFont(Gv.font.CommonFontPx * 0.83)
-Gv.font.H6 = love.graphics.newFont(Gv.font.CommonFontPx * 0.75)
-Gv.font.p = love.graphics.newFont(Gv.font.CommonFontPx * 1)
+Gv.Font = {}
+Gv.Font.commonFontPx = 25
+Gv.Font.H1 = love.graphics.newFont(Gv.Font.commonFontPx * 2)
+Gv.Font.H2 = love.graphics.newFont(Gv.Font.commonFontPx * 1.5)
+Gv.Font.H3 = love.graphics.newFont(Gv.Font.commonFontPx * 1.17)
+Gv.Font.H4 = love.graphics.newFont(Gv.Font.commonFontPx * 1.12)
+Gv.Font.H5 = love.graphics.newFont(Gv.Font.commonFontPx * 0.83)
+Gv.Font.H6 = love.graphics.newFont(Gv.Font.commonFontPx * 0.75)
+Gv.Font.p = love.graphics.newFont(Gv.Font.commonFontPx * 1)
 
 -- Initialize main elements
-Gv.Engine = Engine()
-Gv.EventManager = EventManager()
+Gv.engine = Engine()
+Gv.eventManager = EventManager()
 
 -- Set version
-Gv.Version = "0.00.1"
+Gv.version = "0.00.1"
 
 -- Events
 require("src.events.KeyPressed")
@@ -39,10 +39,10 @@ MainMenuEventSys = require("src.systems.events.MainMenuEventSystem")
 MainMenuRenderSys = require("src.systems.render.MainMenuRenderSystem")
 
 -- initialize gamestates
-Gv.GameState = require("libs.HUMP.gamestate")
-Gv.MainMenu = require("src.gamestate.mainmenu")
+Gv.gameState = require("libs.HUMP.gamestate")
+Gv.mainMenu = require("src.gamestate.mainmenu")
 
 function love.load()
-  Gv.GameState.registerEvents()
-  Gv.GameState.switch(Gv.MainMenu)
+  Gv.gameState.registerEvents()
+  Gv.gameState.switch(Gv.mainMenu)
 end
