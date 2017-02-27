@@ -6,6 +6,9 @@ lovetoys.initialize({
 
 Gv = {}
 
+-- Require vector libs
+Gv.vector = require("libs/HUMP/vector")
+
 -- Setup fonts
 Gv.Font = {}
 Gv.Font.commonFontPx = 25
